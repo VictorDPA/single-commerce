@@ -27,12 +27,6 @@ async function getProducts(): Promise<ProductType[]> {
   return formattedProducts;
 }
 
-// const res = await fetch("https://fakestoreapi.com/products");
-// if (!res.ok) {
-//   throw new Error("Something went wrong");
-// }
-// return res.json();
-
 export default async function Home() {
   const products = await getProducts();
   return (
