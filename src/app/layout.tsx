@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import clsx from "clsx";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import Hydrate from "./components/Hydrate";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,8 +23,10 @@ export default function RootLayout({
     <ClerkProvider localization={ptBR}>
       <html lang="en">
         <body className={clsx(inter.className, "bg-slate-700")}>
-          <Navbar />
-          <main className="bg-slate-700 h-screen p-16">{children}</main>
+          <Hydrate>
+            <Navbar />
+            <main className="bg-slate-700 h-screen p-16">{children}</main>
+          </Hydrate>
         </body>
       </html>
     </ClerkProvider>
