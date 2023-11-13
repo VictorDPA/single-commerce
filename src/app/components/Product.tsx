@@ -1,6 +1,7 @@
 import { ProductType } from "@/types/ProductType";
 import ProductImage from "./ProductImage";
 import { formatPrice } from "@/lib/utils";
+import PurchaseButton from "./PurchaseBtn";
 
 export default function Product({ product }: { product: ProductType }) {
   return (
@@ -12,9 +13,7 @@ export default function Product({ product }: { product: ProductType }) {
         <p className="w-40 truncate">{product.name}</p>
         <p className="text-teal-600">{formatPrice(product.price)}</p>
       </div>
-      <button className="rounded-md bg-teal-600 text-white px-3.5 py-2.5 text-sm text-center">
-        Adicionar ao Carrinho
-      </button>
+      <PurchaseButton product={product} />
     </div>
   );
 }
