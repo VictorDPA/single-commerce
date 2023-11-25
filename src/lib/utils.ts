@@ -1,3 +1,5 @@
+import { ProductType } from "@/types/ProductType";
+
 export const formatPrice = (
   price: number | null,
   quantity: number | undefined | 1 = 1,
@@ -10,3 +12,19 @@ export const formatPrice = (
     currency: "BRL",
   }).format((price * quantity) / 100);
 };
+
+export const totalPriceForCheckout = (items: any[]) => {
+  return items.reduce(
+    (final, item): number => final + item.price! * item.quantity!,
+    0,
+  );
+};
+
+export const newProductDataMap = (items: any): [] =>
+  items.map((item: ProductType) => ({
+    name: item.name,
+    description: item.description,
+    quantity: item.quantity,
+    price: item.price,
+    image: item.image,
+  }));
