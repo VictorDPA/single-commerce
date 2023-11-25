@@ -26,7 +26,7 @@ export default function CartButton() {
           />
         </svg>
         <span className="text-xs font-bold bg-teal-600 rounded-full h-5 w-5 flex items-center justify-center absolute -right-3.5 -top-2.5 -z-10">
-          {/* {useStore((state) => state.totalItems)} */}
+          {useStore.cart.length}
         </span>
       </div>
       {!useStore.isOpen && <CartDrawer />}
